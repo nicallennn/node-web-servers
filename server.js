@@ -3,6 +3,9 @@ const express = require('express')
 const hbs = require('hbs')
 const fs = require('fs')
 
+//get the port from environment variable
+const port = process.env.PORT || 3000
+
 //get the express object
 let app = express()
 
@@ -65,7 +68,8 @@ app.get('/bad', (req, res) => {
   })
 })
 
+
 //tell the app to listen on port 3000
-app.listen(3000, () => {
-  console.log('Server is up an running on port 3000...')
+app.listen(port, () => {
+  console.log(`Server is up an running on port ${port}...`)
 })
