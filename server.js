@@ -57,7 +57,14 @@ app.get('/', (req, res) => {
 //setup another route
 app.get('/about', (req, res) => {
   res.render('about.hbs', {       //render the hbs template -> file in 'views' directory (default hbs template dir)
-    pageTitle: 'About Page',
+    pageTitle: 'About Page'
+  })
+})
+
+//projects page
+app.get('/projects', (req, res) => {
+  res.render('projects.hbs', {
+    pageTitle: 'Projects Page'
   })
 })
 
