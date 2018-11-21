@@ -68,10 +68,10 @@ app.get('/projects', (req, res) => {
   })
 })
 
-//exercise 
-app.get('/bad', (req, res) => {
-  res.send({
-    error: 'Unable to fulfill request!'
+//help page
+app.get('/help', (req, res) => {
+  res.render('help.hbs', {
+    pageTitle: 'Help Page'
   })
 })
 
