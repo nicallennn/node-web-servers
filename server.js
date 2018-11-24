@@ -75,6 +75,13 @@ app.get('/help', (req, res) => {
   })
 })
 
+//love page
+app.get('/love', (req, res) => {
+  res.render('love.hbs', {
+    pageTitle: 'I love you deej!'
+  })
+})
+
 
 //tell the app to listen on port 3000
 app.listen(port, () => {
