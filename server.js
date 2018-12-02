@@ -75,11 +75,35 @@ app.get('/help', (req, res) => {
   })
 })
 
-//love page
-app.get('/love', (req, res) => {
-  res.render('love.hbs', {
-    pageTitle: 'I love you deej!'
+app.get('/calc/:op/:num1/:num2', (req, res) => {
+  const op = req.params.op
+  const num1 = parseInt(req.params.num1)
+  const num2 = parseInt(req.params.num2)
+  let result = 0
+
+  switch (op) {
+    case 'a':
+      result = num1 + num2
+      break
+    case 's':
+      result = num1 - num2
+      break
+    case 'm':
+      result = num1 * num2
+      break
+    case 'd':
+      result = num1 / num2
+      break
+  }
+
+  //return the results object
+  res.send({
+    op: op,
+    num1: num1,
+    num2: num2,
+    result: result
   })
+
 })
 
 
